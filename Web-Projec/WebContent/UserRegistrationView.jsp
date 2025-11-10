@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body><div align="center">
-		<h1>First Form</h1>
-		<form action="HelloServlet" method="post">
+<body>
+	<div align="center">
+		<h1 style="color: red">User Registration</h1>
+		<form action="UserRegistrationCtl" method="post">
 			<table>
 				<tr>
 					<th>First Name</th>
@@ -36,11 +37,10 @@
 				</tr>
 				<tr>
 					<th></th>
-					<td><input type="submit" name="operation" value="save"></td>
+					<td><input type="submit" name="operation" value="signUp"></td>
 				</tr>
 			</table>
 		</form>
-
 	</div>
 
 </body>

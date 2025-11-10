@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
-		<h1>Hello World!</h1>
-		<a href="WelcomeCtl">Click Here</a>
-	</div>
+	<h3>Hii, Guest</h3>
+	<a href="LoginCtl">login</a> |
+	<a href="UserRegistrationCtl">SignUp</a> |
+	<a href="WelcomeCtl">Welcome</a>
+	<hr>
 
 </body>
 </html>

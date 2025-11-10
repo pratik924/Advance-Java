@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body><div align="center">
-		<h1>First Form</h1>
+		<h1>Hello View</h1>
 		<form action="HelloServlet" method="post">
 			<table>
 				<tr>
@@ -40,7 +40,6 @@
 				</tr>
 			</table>
 		</form>
-
 	</div>
 
 </body>
