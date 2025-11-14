@@ -18,38 +18,63 @@ public class UserViewCtl extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("UserView.jsp");
+
+		UserBean bean = new UserBean();
+		UserModel model = new UserModel();
+		String id = request.getParameter("id");
+		System.out.println("id==>" + id);
+		if (id != null) {
+			try {
+				bean = model.findById(Integer.parseInt(id));
+				request.setAttribute("bean", bean);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+		RequestDispatcher rd = request.getRequestDispatcher("UserView.jsp");
+		rd.forward(request, response);
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-          SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-          UserBean bean = new UserBean();
-          UserModel model = new UserModel();
-          
-          String firstName = request.getParameter("firstName");
-          String lastName = request.getParameter("lastName");
-          String login = request.getParameter("login");
-          String password = request.getParameter("password");
-          String dob = request.getParameter("dob");
-          
-          try {
-        	  bean.setFirstName(firstName);
-        	  bean.setLastName(lastName);
-        	  bean.setLogin(login);
-        	  bean.setPassword(password);
-        	  bean.setDob(sdf.parse(dob));
-        	  model.add(bean);
-        	  request.setAttribute("successMsg", "data added succesfully");
-        	  
-			
+		String op = request.getParameter("operation");
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		UserBean bean = new UserBean();
+		UserModel model = new UserModel();
+
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String login = request.getParameter("login");
+		String password = request.getParameter("password");
+		String dob = request.getParameter("dob");
+
+		try {
+			bean.setFirstName(firstName);
+			bean.setLastName(lastName);
+			bean.setLogin(login);
+			bean.setPassword(password);
+			bean.setDob(sdf.parse(dob));
+
+			if (op.equals("save")) {
+				model.add(bean);
+				request.setAttribute("successMsg", "data added succesfully");
+
+			} else {
+				bean.setId(Integer.parseInt(request.getParameter("id")));
+				model.update(bean);
+				request.setAttribute("successMsg", "data updated succesfully");
+			}
+
 		} catch (Exception e) {
 			request.setAttribute("errorMsg", e.getMessage());
-		    e.printStackTrace();	
+			e.printStackTrace();
 		}
-          RequestDispatcher rd = request.getRequestDispatcher("UserView.jsp");
-          rd.forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("UserView.jsp");
+		rd.forward(request, response);
 	}
 
 }

@@ -32,7 +32,7 @@
 		<%
 		}
 		%>
-		<form action="UserListCtl" method="post">
+		<form action="UserListCtl.do" method="post">
 			<table>
 				<tr>
 					<th>First Name</th>
@@ -45,12 +45,13 @@
 			</table>
 			<table border="1px" width="100%">
 				<tr style="background-color: skyblue">
-				<th>Delete></th>
+					<th>Delete</th>
 					<th>S.NO</th>
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Login</th>
 					<th>DOB</th>
+					<th>Edit</th>
 				</tr>
 				<%
 				Iterator<UserBean> it = list.iterator();
@@ -65,6 +66,7 @@
 					<td><%=bean.getLastName()%></td>
 					<td><%=bean.getLogin()%></td>
 					<td><%=bean.getDob()%></td>
+					<td><a href="UserViewCtl.do?id=<%=bean.getId()%>">Edit</a></td>
 				</tr>
 				<%
 				}
@@ -72,7 +74,7 @@
 			</table>
 			<br>
 			<table width="100%">
-			<br>
+				<br>
 				<input type="submit" name="operation" value="delete">
 			</table>
 

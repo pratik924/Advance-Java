@@ -24,4 +24,4 @@
 			<H3>&copy; Copyrights RAYS Technologies 2025</H3>
 		</CENTER>
 	</div>
-</html>>
+</html>
