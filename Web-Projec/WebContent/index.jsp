@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div align="center">
-		<h1 style = "color:#4B5E8A">|| You are Chutiya||</h1>
+		<h1 style = "color:#4B5E8A">|| Welcome to My Website ||</h1>
 		<a href="WelcomeCtl">Click Here</a>
 	</div>
 	
