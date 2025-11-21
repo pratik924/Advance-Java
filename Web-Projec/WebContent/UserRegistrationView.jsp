@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="Header.jsp"%>
 	<div align="center">
 		<h1 style="color: red">User Registration</h1>
 		<form action="UserRegistrationCtl" method="post">
@@ -42,6 +43,7 @@
 			</table>
 		</form>
 	</div>
+	<%@ include file="Footer.jsp"%>
 
 </body>
 </html>

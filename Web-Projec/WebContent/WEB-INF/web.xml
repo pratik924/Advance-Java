@@ -3,19 +3,18 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
-	<display-name>Web-Project</display-name>
+	<display-name>Web-Projec</display-name>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-
-
 	<!-- <filter> <filter-name>FrontCtl</filter-name> <filter-class>com.rays.controller.FrontCtl</filter-class> 
 		</filter> <filter-mapping> <filter-name>FrontCtl</filter-name> <url-pattern>*.do</url-pattern> 
 		</filter-mapping> -->
 
 	<!-- <session-config> <session-timeout>1</session-timeout> </session-config> -->
 
-	<error-page>
+	
+	<!-- <error-page>
 		<error-code>404</error-code>
 		<location>/Error404.jsp</location>
 	</error-page>
@@ -23,6 +22,6 @@
 	<error-page>
 		<error-code>500</error-code>
 		<location>/Error500.jsp</location>
-	</error-page>
+	</error-page> -->
 
 </web-app>
